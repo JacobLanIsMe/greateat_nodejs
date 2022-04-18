@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豪食在會員註冊</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <style>
+        .registration{
+            padding:60px 0 0 0;
+        }
+        .registration h1{
+            text-align:center;
+            padding:10px 0;
+            color:#990;
+            border-bottom:1px solid #000;
+            font-size:30px;
+        }
+        .registration h2{
+            text-align:center;
+            font-size:16px;
+            padding:10px 0;
+            line-height:1.5;
+        }
+        sup{
+            color:red;
+            font-size:10px;
+            vertical-align:super;
+        }
+        form{
+            padding:0 20px;
+            margin:auto;
+        }
+        form p{
+            padding:5px 0 0 0;
+            font-size:20px;
+        }
+        form .input{
+            margin:5px 0;
+            width:100%;
+            height:30px;
+        }
+        form .reset_or_submit{
+            margin:5px 0;
+            display:flex;
+            justify-content:center;
+        }
+        form .reset_or_submit input{
+            width:40%;
+            margin:0 5px;
+            background-color: #dd0;
+            font-size:20px;
+            height:40px;
+        }
+        @media screen and (min-width:768px){
+            br{
+                display:none;
+            }
+            form{
+                width:500px;
+            }
+            form div{
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+            }
+            form .input{
+                width:70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu-control">
+    <div class="header">
+        <a href="/"><img src="img/greateat.png" alt=""></a>
+        <label for="menu-control" class="menu-btn">
+            <span>選單</span>
+        </label>
+        <nav>
+            <a href="/bulletin">營運公告</a>
+            <a href="/order">線上預購</a>
+            <a href="/login">登入會員</a>
+            <a href="/cart" class="cart">購物車<span>0</span></a>
+            <a href="/store">門市資訊</a>
+        </nav>
+    </div>
+    <div class="registration">
+        <h1>會員註冊</h1>
+        <h2>為提供您更完善的服務，請務必輸入正確的資料。<br/><sup>*</sup>為必填欄位</h2>
+        <form action="/registration_success" method="post">
+            <div>
+                <p>帳號<sup>*</sup></p>
+                <input require="required" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="name" placeholder="請輸入電子郵件" class="input">
+            </div>    
+            <div>
+                <p>密碼<sup>*</sup></p>
+                <input require="required" type="password" name="password" pattern="^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$" placeholder="格式需為英文與數字混合，長度至少6個字元" class="input" id="pw1" oninput="setCustomValidity('');" oninvalid="setCustomValidity('請輸入正確的密碼格式：含英數組合至少6個字元')">
+            </div>
+            <div>
+                <p>密碼確認<sup>*</sup></p>
+                <input require="required" type="password" name="password_reaffirm" placeholder="格式需為英文與數字混合，長度至少6個字元" class="input" id="pw2" oninput="setCustomValidity('')" onchange="if (document.getElementById('pw1').value != document.getElementById('pw2').value){setCustomValidity('密碼不吻合');}">
+            </div>
+            <div>
+                <p>中文姓名<sup>*</sup></p>
+                <input require="required" type="text" name="chinesename" class="input">
+            </div>
+            <div>
+                <p>聯絡電話<sup>*</sup></p>
+                <input require="required" type="text" name="phone" placeholder="0901-234567 or 02-12345678" class="input">
+            </div>
+            <div>
+                <p>聯絡地址<sup>*</sup></p>
+                <input require="required" type="text" name="address" class="input">
+            </div>
+            <div>
+                <p>出生年月日</p>
+                <input type="date" name="birthday" class="input">
+            </div>
+            <div class="reset_or_submit">
+                <input type="reset" name="reset" value="重新填寫">
+                <input type="submit" name="submit" value="確認送出">
+            </div> 
+        </form>
+    </div>
+    <div class="footer">
+        <div class="contact-img">
+            <img src="https://picsum.photos/480/110">
+        </div>
+        <div class="contact">
+            <h1>聯絡我們</h1>
+            <h2>客服專線：(03) 328-1200#7900</h2>
+            <h2>營業時間：全年無休</h2>
+            <h2>客服信箱：swt817@cgmh.org.tw</h2>
+        </div>
+    </div>
+
+    
+    <script>
+        
+    </script>
+</body>
+</html>
